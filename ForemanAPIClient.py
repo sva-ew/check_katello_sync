@@ -271,7 +271,7 @@ class ForemanAPIClient:
             hostname = socket.gethostname()
         else:
             #convert to FQDN if possible:
-            fqdn = socket.gethostbyaddr(hostname)
+            fqdn = socket.gethostbyname_ex(hostname)
             if "." in fqdn[0]:
                 hostname = fqdn[0]
         return hostname
